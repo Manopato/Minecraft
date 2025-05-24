@@ -1,116 +1,55 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Para Solecito</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solecito</title>
   <style>
     body {
-      background-color: #fff0f5;
+      background-color: #ffe6f0;
+      color: #333;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      padding: 20px;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
     }
-
-    a {
-      margin-bottom: 30px;
-      font-size: 30px;
-      text-decoration: none;
-      color: #ff1493;
-    }
-
-    .contenedor {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .corazon {
-      width: 260px;
-      height: 240px;
-      position: relative;
-      margin-bottom: 50px;
-      animation: latido 2s infinite ease-in-out;
-    }
-
-    .corazon::before,
-    .corazon::after {
-      content: "";
-      width: 140px;
-      height: 220px;
-      background: #ff1493;
-      border-radius: 70px 70px 0 0;
+    .volver {
       position: absolute;
-      top: 0;
+      top: 20px;
+      left: 20px;
+      color: deeppink;
+      font-size: 18px;
+      text-decoration: none;
     }
-
-    .corazon::before {
-      left: 120px;
-      transform: rotate(-45deg);
-      transform-origin: right bottom;
-    }
-
-    .corazon::after {
-      left: 0;
+    .corazon {
+      font-size: 120px;
+      color: deeppink;
       transform: rotate(45deg);
-      transform-origin: left bottom;
+      margin-bottom: -40px;
     }
-
-    @keyframes latido {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
     .conejo {
-      font-size: 50px;
-      line-height: 1.5;
-      text-align: center;
-      color: #444;
-      margin-bottom: 30px;
+      font-size: 36px;
+      line-height: 1.2;
     }
-
-    .piu {
-      font-size: 48px;
-      color: #ff69b4;
-      animation: piuAnim 1s ease-in-out forwards;
-    }
-
-    @keyframes piuAnim {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .dedicatoria {
-      font-size: 50px;
-      color: #d63384;
-      text-align: center;
-      animation: aparecer 2s ease-in forwards;
-      opacity: 0;
-    }
-
-    @keyframes aparecer {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    .mensaje {
+      font-size: 28px;
+      color: deeppink;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <a href="index.html">&larr; Volver a la página principal</a>
+  <a class="volver" href="index.html">← Volver a la página principal</a>
 
-  <div class="contenedor">
-    <div class="corazon"></div>
+  <div class="corazon">❤</div>
 
-    <div class="conejo">
-      (\__/)<br>
-      (｡•́‿•̀｡)<br>
-      /つ♡つ<br>
-      <span class="piu">¡Piu!</span>
-    </div>
+  <div class="conejo">
+    (｡♥‿♥｡)<br>
+    /つ♡⊂\
+  </div>
 
-    <div class="dedicatoria">Con cariño, Solecito</div>
+  <div class="mensaje">
+    ¡Piu!<br>
+    <strong>Con cariño, Solecito</strong>
   </div>
 </body>
 </html>
