@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+.<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -14,19 +14,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px;
+      gap: 60px;
       flex-wrap: wrap;
     }
 
     .conejo {
-      font-size: 80px;
-      line-height: 1.2;
-      transform: rotateY(180deg);
-      text-align: right;
+      font-size: 100px;
+      transform: rotateY(180deg); /* Mira hacia el corazón */
+      line-height: 1;
+      text-align: center;
     }
 
     .piu {
-      font-size: 32px;
+      font-size: 36px;
       color: #ff69b4;
       animation: piuAnim 1s ease-in-out forwards;
     }
@@ -38,13 +38,13 @@
 
     .corazon-grande {
       font-size: 10px;
-      width: 350px;
-      height: 350px;
+      width: 400px;
+      height: 400px;
       display: grid;
       place-items: center;
       position: relative;
-      animation: aparecer 2s ease-in forwards;
       opacity: 0;
+      animation: aparecer 2s ease-out forwards;
     }
 
     .corazon-grande::before {
@@ -69,18 +69,18 @@
       50% { transform: scale(1.1); }
     }
 
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
     .dedicatoria {
       font-size: 36px;
-      margin-top: 50px;
+      margin-top: 40px;
       color: #d63384;
       text-align: center;
       animation: aparecer 2s ease-in forwards;
       opacity: 0;
-    }
-
-    @keyframes aparecer {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -89,7 +89,7 @@
     <div class="conejo">
       (\_/)<br>
       ( •_•)<br>
-      /&gt; <span class="piu">¡Piu!</span>
+      /&gt; <div class="piu">¡Piu!</div>
     </div>
     <div class="corazon-grande"></div>
   </div>
