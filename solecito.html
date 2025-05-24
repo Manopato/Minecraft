@@ -1,4 +1,4 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -13,38 +13,20 @@
     .contenedor {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 60px;
+      justify-content: space-between;
+      gap: 40px;
       flex-wrap: wrap;
     }
 
-    .conejo {
-      font-size: 100px;
-      transform: rotateY(180deg); /* Mira hacia el corazón */
-      line-height: 1;
-      text-align: center;
-    }
-
-    .piu {
-      font-size: 36px;
-      color: #ff69b4;
-      animation: piuAnim 1s ease-in-out forwards;
-    }
-
-    @keyframes piuAnim {
-      0% { opacity: 0; transform: translateY(-10px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
     .corazon-grande {
-      font-size: 10px;
-      width: 400px;
-      height: 400px;
+      flex: 1;
+      width: 380px;
+      height: 380px;
+      position: relative;
       display: grid;
       place-items: center;
-      position: relative;
+      animation: aparecer 3s ease-out forwards;
       opacity: 0;
-      animation: aparecer 2s ease-out forwards;
     }
 
     .corazon-grande::before {
@@ -69,29 +51,48 @@
       50% { transform: scale(1.1); }
     }
 
-    @keyframes aparecer {
-      0% { opacity: 0; transform: translateY(20px); }
+    .conejo {
+      font-size: 100px;
+      line-height: 1;
+      transform: rotateY(180deg);
+      text-align: right;
+      flex: 1;
+    }
+
+    .piu {
+      font-size: 42px;
+      color: #ff69b4;
+      animation: piuAnim 1s ease-in-out forwards;
+    }
+
+    @keyframes piuAnim {
+      0% { opacity: 0; transform: translateY(-10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
 
     .dedicatoria {
       font-size: 36px;
-      margin-top: 40px;
+      margin-top: 50px;
       color: #d63384;
       text-align: center;
       animation: aparecer 2s ease-in forwards;
       opacity: 0;
     }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
   </style>
 </head>
 <body>
   <div class="contenedor">
+    <div class="corazon-grande"></div>
     <div class="conejo">
       (\_/)<br>
       ( •_•)<br>
-      /&gt; <div class="piu">¡Piu!</div>
+      /&gt; <span class="piu">¡Piu!</span>
     </div>
-    <div class="corazon-grande"></div>
   </div>
 
   <div class="dedicatoria">Con cariño, Solecito</div>
