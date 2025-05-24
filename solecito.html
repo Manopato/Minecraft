@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,36 +8,72 @@
     body {
       background-color: #fff0f5;
       font-family: 'Comic Sans MS', cursive, sans-serif;
-      padding: 30px;
+      padding: 20px;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     a {
-      display: inline-block;
-      margin-bottom: 20px;
-      font-size: 24px;
+      margin-bottom: 30px;
+      font-size: 30px;
       text-decoration: none;
       color: #ff1493;
     }
 
     .contenedor {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
+    }
+
+    .corazon {
+      width: 260px;
+      height: 240px;
+      position: relative;
+      margin-bottom: 50px;
+      animation: latido 2s infinite ease-in-out;
+    }
+
+    .corazon::before,
+    .corazon::after {
+      content: "";
+      width: 140px;
+      height: 220px;
+      background: #ff1493;
+      border-radius: 70px 70px 0 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .corazon::before {
+      left: 120px;
+      transform: rotate(-45deg);
+      transform-origin: right bottom;
+    }
+
+    .corazon::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: left bottom;
+    }
+
+    @keyframes latido {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     .conejo {
-      font-size: 180px;
-      line-height: 1.1;
-      text-align: right;
-      white-space: pre;
-      flex: 1;
+      font-size: 50px;
+      line-height: 1.5;
+      text-align: center;
+      color: #444;
+      margin-bottom: 30px;
     }
 
-    .conejo span {
-      display: block;
-      font-size: 60px;
+    .piu {
+      font-size: 48px;
       color: #ff69b4;
       animation: piuAnim 1s ease-in-out forwards;
     }
@@ -46,44 +83,17 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    .corazon-grande {
-      flex: 1;
-      width: 400px;
-      height: 400px;
-      position: relative;
-      display: grid;
-      place-items: center;
-      animation: aparecer 3s ease-out forwards;
-      opacity: 0;
-    }
-
-    .corazon-grande::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      animation: latido 2s infinite ease-in-out;
-      background: #ff1493;
-      clip-path: path("M200,350 C80,250 0,150 100,50 C150,0 200,50 200,100 C200,50 250,0 300,50 C400,150 320,250 200,350 Z");
-    }
-
-    @keyframes latido {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-    }
-
-    @keyframes aparecer {
-      0% { opacity: 0; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
-    }
-
     .dedicatoria {
-      font-size: 40px;
-      margin-top: 50px;
+      font-size: 50px;
       color: #d63384;
       text-align: center;
       animation: aparecer 2s ease-in forwards;
       opacity: 0;
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -91,15 +101,16 @@
   <a href="index.html">&larr; Volver a la página principal</a>
 
   <div class="contenedor">
-    <div class="corazon-grande"></div>
+    <div class="corazon"></div>
+
     <div class="conejo">
       (\__/)<br>
       (｡•́‿•̀｡)<br>
-      (つ  ♥ つ)<br>
-      <span>¡Piu!</span>
+      /つ♡つ<br>
+      <span class="piu">¡Piu!</span>
     </div>
-  </div>
 
-  <div class="dedicatoria">Con cariño, Solecito</div>
+    <div class="dedicatoria">Con cariño, Solecito</div>
+  </div>
 </body>
 </html>
