@@ -2,54 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solecito</title>
   <style>
     body {
       background-color: #ffe6f0;
-      color: #333;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Segoe UI', cursive;
+      color: #d60087;
       text-align: center;
-      padding: 60px 20px;
+      padding: 2em;
     }
-    .volver {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: deeppink;
-      font-size: 18px;
+
+    .back-link {
+      display: block;
+      margin-bottom: 2em;
+      font-size: 1.2em;
+      color: #d60087;
       text-decoration: none;
     }
+
+    .center-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin-bottom: 2em;
+    }
+
     .corazon {
-      font-size: 120px;
-      color: deeppink;
-      transform: rotate(45deg);
-      margin-bottom: -40px;
+      font-size: 5em;
     }
+
     .conejo {
-      font-size: 36px;
-      line-height: 1.2;
+      font-size: 3em;
+      color: #333;
+      white-space: pre;
+      font-family: monospace;
     }
+
     .mensaje {
-      font-size: 28px;
-      color: deeppink;
-      margin-top: 40px;
+      font-size: 2em;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
-  <a class="volver" href="index.html">← Volver a la página principal</a>
+  <a href="index.html" class="back-link">← Volver a la página principal</a>
 
-  <div class="corazon">❤</div>
-
-  <div class="conejo">
-    (｡♥‿♥｡)<br>
-    /つ♡⊂\
+  <div class="center-content">
+    <div class="corazon">❤️</div>
+    <div class="conejo">
+      (\\_/)<br/>
+      (•ᴗ•)<br/>
+      /つ♡つ
+    </div>
   </div>
 
-  <div class="mensaje">
-    ¡Piu!<br>
-    <strong>Con cariño, Solecito</strong>
-  </div>
+  <div class="mensaje">¡Piu!</div>
+  <div class="mensaje">Con cariño, Solecito</div>
 </body>
 </html>
