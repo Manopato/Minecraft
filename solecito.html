@@ -8,27 +8,35 @@
       background-color: #fff0f5;
       font-family: 'Comic Sans MS', cursive, sans-serif;
       padding: 30px;
-      font-size: 22px;
+      margin: 0;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-decoration: none;
+      color: #ff1493;
     }
 
     .contenedor {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 30px;
       flex-wrap: wrap;
     }
 
     .conejo {
       font-size: 180px;
-      line-height: 1;
-      transform: rotateY(180deg);
+      line-height: 1.1;
       text-align: right;
+      white-space: pre;
       flex: 1;
     }
 
-    .piu {
-      font-size: 50px;
+    .conejo span {
+      display: block;
+      font-size: 60px;
       color: #ff69b4;
       animation: piuAnim 1s ease-in-out forwards;
     }
@@ -38,57 +46,57 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    .corazon-svg {
+    .corazon-grande {
       flex: 1;
       width: 400px;
       height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
+      position: relative;
+      display: grid;
+      place-items: center;
       animation: aparecer 3s ease-out forwards;
+      opacity: 0;
     }
 
-    .corazon-svg svg {
+    .corazon-grande::before {
+      content: '';
+      position: absolute;
       width: 100%;
       height: 100%;
-      fill: #ff1493;
       animation: latido 2s infinite ease-in-out;
+      background: #ff1493;
+      clip-path: path("M200,350 C80,250 0,150 100,50 C150,0 200,50 200,100 C200,50 250,0 300,50 C400,150 320,250 200,350 Z");
     }
 
     @keyframes latido {
       0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50% { transform: scale(1.1); }
+    }
+
+    @keyframes aparecer {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
     }
 
     .dedicatoria {
-      font-size: 36px;
-      margin-top: 60px;
+      font-size: 40px;
+      margin-top: 50px;
       color: #d63384;
       text-align: center;
       animation: aparecer 2s ease-in forwards;
       opacity: 0;
     }
-
-    @keyframes aparecer {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
   </style>
 </head>
 <body>
-  <div class="contenedor">
-    <div class="corazon-svg">
-      <svg viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg">
-        <path d="M23.6,0c-3.4,0-6.4,2.1-7.6,5.1C14.8,2.1,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4
-        c0,9.1,16,21.2,16,21.2s16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
-      </svg>
-    </div>
+  <a href="index.html">&larr; Volver a la página principal</a>
 
+  <div class="contenedor">
+    <div class="corazon-grande"></div>
     <div class="conejo">
-      (\_/)<br>
-      ( •_•)<br>
-      /&gt; <span class="piu">¡Piu!</span>
+      (\__/)<br>
+      (｡•́‿•̀｡)<br>
+      (つ  ♥ つ)<br>
+      <span>¡Piu!</span>
     </div>
   </div>
 
